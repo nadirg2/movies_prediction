@@ -3,3 +3,5 @@ numpy
 scikit-learn
 seaborn
 lightfm
+ipykernel
+gxx_linux-64
