@@ -1,3 +1,9 @@
 venv/
 notebooks/data_20m/*
 notebooks/data/*
+.conda
+data/raw/*
+data/processed/*
+logs/*
+models/*
+__pycache__/
