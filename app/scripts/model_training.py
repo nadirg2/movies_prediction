@@ -1,7 +1,7 @@
 from lightfm import LightFM
 
-from app.scripts.logger import logging
-from app.scripts.pickler import save_object, load_object
+from app.utils.logger import logging
+from app.utils.pickler import save_object, load_object
 
 
 def train_model():

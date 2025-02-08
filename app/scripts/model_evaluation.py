@@ -1,7 +1,7 @@
 from lightfm.evaluation import precision_at_k, recall_at_k, auc_score
 
-from app.scripts.logger import logging
-from app.scripts.pickler import save_object, load_object
+from app.utils.logger import logging
+from app.utils.pickler import save_object, load_object
 
 
 def evaluate_model():

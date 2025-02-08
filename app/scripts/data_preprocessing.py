@@ -2,8 +2,8 @@ import pandas as pd
 from lightfm.data import Dataset
 from lightfm.cross_validation import random_train_test_split
 
-from app.scripts.logger import logging
-from app.scripts.pickler import save_object
+from app.utils.logger import logging
+from app.utils.pickler import save_object
 
 
 def preprocess_data():
