@@ -13,14 +13,18 @@ def evaluate_model():
     model = load_object('models/lightfm_model.pkl')
 
     logging.info("Scoring precision")
-    train_precision = precision_at_k(model, train_interactions, item_features=item_features, k=10).mean()
-    test_precision = precision_at_k(model, test_interactions, k=10, item_features=item_features).mean()
+    # train_precision = precision_at_k(model, train_interactions, item_features=item_features, k=10).mean()
+    # test_precision = precision_at_k(model, test_interactions, k=10, item_features=item_features).mean()
+    precision = precision_at_k(model, test_interactions=test_interactions, train_interactions=train_interactions, k=10, item_features=item_features).mean()
 
     logging.info("Scoring AUC")
-    train_auc = auc_score(model, train_interactions, item_features=item_features).mean()
-    test_auc = auc_score(model, test_interactions, item_features=item_features).mean()
+    # train_auc = auc_score(model, train_interactions, item_features=item_features).mean()
+    # test_auc = auc_score(model, test_interactions, item_features=item_features).mean()
+    auc = auc_score(model, test_interactions=test_interactions, train_interactions=train_interactions, item_features=item_features).mean()
 
-    print('Precision: train %.2f, test %.2f.' % (train_precision, test_precision))
-    print('AUC: train %.2f, test %.2f.' % (train_auc, test_auc))
+    # print('Precision: train %.2f, test %.2f.' % (train_precision, test_precision))
+    # print('AUC: train %.2f, test %.2f.' % (train_auc, test_auc))
+    print('Precision: %.2f.' % precision)
+    print('AUC: %.2f.' % (auc))
 
-    print("Model evaluating completed!")
+    logging.info("Model evaluating completed")
